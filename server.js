@@ -1,5 +1,4 @@
-var orm = require("./config/orm.js");
+var burger = require("./models/burger.js");
 
-orm.insertOne("Test Burger");
+burger.selectAll();
 
-orm.updateOne("Cheeseburger");

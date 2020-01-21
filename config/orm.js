@@ -1,5 +1,8 @@
 var connection = require("./connection.js");
 
+
+
+// may need to revisit query string and connection.query formats when linking with burger.js model
 var orm = {
     selectAll: function() {
         var queryString = "SELECT * FROM burgers";
@@ -25,7 +28,5 @@ var orm = {
         })
     }
 };
-
-
 
 module.exports = orm;
