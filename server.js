@@ -1,3 +1,5 @@
 var orm = require("./config/orm.js");
 
-orm.insertOne("Second Test Burger");
+orm.insertOne("Test Burger");
+
+orm.updateOne("Cheeseburger");

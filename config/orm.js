@@ -17,13 +17,10 @@ var orm = {
         });
     },
 
-    updateOne: function() {
-        // PLACEHOLDER QUERYSTRING
-        var queryString = " ";
-        // ADD [] FOR INTAKE PARAMETERS B/W QSTRING & FX
-        connection.query(queryString, function(err, result) {
+    updateOne: function(name) {
+        var queryString = "UPDATE burgers SET devoured = true WHERE burger_name = ?";
+        connection.query(queryString, [name], function(err, result) {
             if (err) throw err;
-            // PLACEHOLDER WORK
             console.log(result)
         })
     }
