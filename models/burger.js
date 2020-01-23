@@ -8,7 +8,7 @@ var burger = {
     },
     insertOne: function(vals, cb) {
         orm.insertOne(vals, function(res) {
-            // console.log(res);
+            console.log(res);
             cb(res);
         })
     },
@@ -21,3 +21,4 @@ var burger = {
 };
 
 module.exports = burger;
+
