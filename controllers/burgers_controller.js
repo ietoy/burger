@@ -20,7 +20,6 @@ router.get("/", function(req, res) {
       var hbsObject = {
         burgers: data
       };
-      // console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
@@ -34,13 +33,10 @@ router.post("/api/burgers", function (req, res) {
   })
 });
 
-// revisit this one ASAP, not sure if I'm passing infomration correctly through the functions
 // PUT "UPDATE" ROUTE
 router.put("/api/burgers/:id", function (req, res) {
   var devoured = "id = " + req.params.id;
-  // console.log("devoured", devoured);
   burger.updateOne({
-    // devoured = true
   }, devoured, function(result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
