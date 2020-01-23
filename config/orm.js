@@ -1,30 +1,28 @@
 var connection = require("./connection.js");
 
-
-
 // may need to revisit query string and connection.query formats when linking with burger.js model
 var orm = {
-    selectAll: function() {
+    selectAll: function(cb) {
         var queryString = "SELECT * FROM burgers";
         connection.query(queryString, function(err, result) {
             if (err) throw err;
-            // console.log(result)
+            cb(result);
         })
     },
 
-    insertOne: function(name) {
+    insertOne: function(vals, cb) {
         var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
-        connection.query(queryString, [name], function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
             if (err) throw err;
-            // console.log(result);
+            cb(result);
         });
     },
 
-    updateOne: function(name) {
+    updateOne: function(vals, cb) {
         var queryString = "UPDATE burgers SET devoured = true WHERE burger_name = ?";
-        connection.query(queryString, [name], function(err, result) {
+        connection.query(queryString, function(err, result) {
             if (err) throw err;
-            console.log(result)
+            cb(result);
         })
     }
 };

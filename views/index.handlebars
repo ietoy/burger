@@ -1,34 +1,32 @@
 <h1>Eat Da Burger!</h1>
+  <h2>Burgers I Want to Eat!</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          <li>
+            {{burger_name}}
+            <button data-id="{{id}}">DEVOUR IT!</button>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
 
-<h2>Burgers I Want to Eat!</h2>
+  <h2>Burgers I Ate!</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          <li>
+            {{burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
 
-{{!-- ADAPT THIS FROM THE CATS APP --}}
-{{!-- IF UNEATEN, THROW TO WANT-TO-EAT LIST, OTHERWISE THROW TO EATEN LIST --}}
-{{!-- <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul> --}}
-
-<h2>Burgers I Ate!</h2>
-
-{{!-- <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul> --}}
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  <h2>Add a Burger</h2>
+    <form class="create-form">
+      <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
+      </div>
+      <button type="submit">Add Burger</button>
+    </form>
